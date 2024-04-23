@@ -537,11 +537,6 @@ def get_best_youtube_url(url, use_pafy=True):
         (str): The URL of the best quality MP4 video stream, or None if no suitable stream is found.
     """
     if use_pafy:
-        check_requirements(("pafy", "youtube_dl==2020.12.2"))
-        import pafy  # noqa
-
-        return pafy.new(url).getbestvideo(preftype="mp4").url
-    else:
         check_requirements("yt-dlp")
         import yt_dlp
 
